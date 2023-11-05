@@ -96,5 +96,20 @@ namespace Alura.ByteBank.WebApp.Testes1
 
             Assert.Contains("401", driver.PageSource);
         }
+
+        [Fact]
+        public void RealizaLoginAcessaMenuECadastraCliente()
+        {
+
+            IWebDriver driver = new EdgeDriver(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location));
+
+            driver.Navigate().GoToUrl("https://localhost:44309/UsuarioApps/Login");
+
+            var login = driver.FindElement(By.Name("Email"));
+            var senha = driver.FindElement(By.Name("Senha"));
+
+            login.SendKeys("andre@email.com");
+            senha.SendKeys("senha01");
+        }
     }
 }
