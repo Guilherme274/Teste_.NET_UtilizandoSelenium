@@ -110,6 +110,16 @@ namespace Alura.ByteBank.WebApp.Testes1
 
             login.SendKeys("andre@email.com");
             senha.SendKeys("senha01");
+
+            driver.FindElement(By.CssSelector(".btn")).Click();
+
+            driver.FindElement(By.LinkText("Cliente")).Click();
+
+            driver.FindElement(By.LinkText("Adicionar Cliente")).Click();
+
+            driver.FindElement(By.Name("Identificador")).Click();
+
+            driver.FindElement(By.Name("Identificador")).SendKeys("");
         }
     }
 }
